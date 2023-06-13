@@ -1,0 +1,112 @@
+@use "sass:math";
+
+@mixin respond-from($media) {
+  @if $media == xs {
+    @media (min-width: 0) and (max-width: 420px) {
+      @content;
+    }
+  } @else if $media == md_sm {
+    @media (min-width: 421px) and (max-width: 600px) {
+      @content;
+    }
+  } @else if $media == xs_small {
+    @media (max-width: 360px) {
+      @content;
+    }
+  } @else if $media == xs_sm {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $media == md-small {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $media ==md_lg {
+    @media (min-width: 901px) and (max-width: 1100px) {
+      @content;
+    }
+  } @else if $media ==md {
+    @media (max-width: 900px) {
+      @content;
+    }
+  } @else if $media ==md-xl {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $media ==lg {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  } @else if $media ==xl {
+    @media (min-width: 1201px) {
+      @content;
+    }
+  } @else if $media ==lg-port {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}
+
+@mixin line-clamp($numLines: 1, $lineHeight: 1.412) {
+  overflow: hidden;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+  display: block;
+  /* autoprefixer: off */
+  display: -webkit-box;
+  -webkit-line-clamp: $numLines;
+  -webkit-box-orient: vertical;
+  max-height: $numLines * $lineHeight + "2" + unquote("em");
+}
+
+@mixin NoscrollBar() {
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-thumb {
+    width: 0;
+    height: 0;
+    background: transparent;
+    display: none;
+  }
+}
+
+@mixin scrollBar() {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 3px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #333;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #999;
+    // border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  // &::-webkit-scrollbar-thumb:hover {
+  //   background: var(--lightgrey1);
+  // }
+}
+
+@mixin PlaceholderCSS() {
+  opacity: 0;
+  transition: inherit;
+  color: #a19ec0;
+  line-height: 2.35rem;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+@mixin PlaceholderFocusCSS() {
+  opacity: 1;
+}

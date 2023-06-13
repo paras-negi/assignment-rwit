@@ -1,0 +1,164 @@
+@import "./mixins.scss";
+@import "./base.scss";
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+button {
+  background: unset;
+  border: unset;
+  cursor: pointer;
+}
+
+.btn {
+  background: var(--primary);
+  border-radius: 5px;
+  padding: 1.3rem 4rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 28px;
+  color: var(--white);
+}
+.flex{
+  display: flex;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.text-right {
+  text-align: right;
+}
+.pt8 {
+  padding-top: 8rem;
+}
+.pt4 {
+  padding-top: 4rem;
+}
+.mY4{
+  margin: 4rem 0;
+}
+.main {
+  &-container {
+    background: var(--white);
+    max-width: 1170px;
+    margin: auto;
+    width: 90%;
+    border-radius: 2rem;
+    padding: 2.6rem;
+    display: flex;
+    min-height: 700px;
+  }
+  &-left {
+    flex: 0 0;
+    flex-basis: 35rem;
+    background: #493eff url(/Step.png) no-repeat;
+    border-radius: 2rem;
+    padding: 4rem 2rem;
+    background-size: contain;
+    background-position: bottom;
+  }
+  &-right {
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 4rem 10rem;
+    height: 100%;
+    overflow: auto;
+    @include respond-from(md) {
+      padding: 4rem;
+    }
+  }
+}
+.list {
+  li {
+    display: flex;
+    column-gap: 2rem;
+    align-items: center;
+    &:not(:last-child) {
+      padding-bottom: 4rem;
+    }
+  }
+  &-number {
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--white);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    border-radius: 50%;
+    &-active {
+      background: #c3e1fb;
+      color: #000;
+      border-color:#c3e1fb ;
+    }
+  }
+  &-step {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    color: #9791ff;
+  }
+  &-label {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--white);
+  }
+}
+
+.info {
+  h3 {
+    font-weight: 700;
+    font-size: 4.8rem;
+    line-height: 1.2;
+    color: var(--primary);
+  }
+  p {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1.4;
+    color: var(--secondary);
+  }
+  label {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--primary);
+    padding-bottom: 2rem;
+    width: 100%;
+    display: inline-block;
+  }
+  input,select {
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+    width: 100%;
+    padding: 1.6rem 2rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 9px;
+    color: var(--secondary);
+  }
+  &-content{
+    ul{
+      padding: 2rem 0;
+    }
+    li{
+      display: flex;
+      padding: 1.4rem 0;
+      column-gap: 2rem;
+    }
+  }
+  &-label{
+    color: var(--primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  &-data{
+    color: var(--secondary);
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+}
+
+.error {
+  color: red !important;
+}

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  word-break: break-word;
+  outline: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+:root {
+  --primary: #09244d;
+  --secondary:#737373;
+  --white:#fff;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+    font-family: 'Quicksand', sans-serif;
+    @include respond-from(lg) {
+      font-size: 9px;
+    }
+
+    @include respond-from(md-xl) {
+      font-size: 8.5px;
+    }
+    // @include respond-from(sm) {
+    //   font-size: 7.5px;
+    // }
+    @include respond-from(lg-port) {
+      font-size: 12px;
+    }
+    @include respond-from(xl-port) {
+      font-size: 14px;
+    }
+    @include respond-from(xl-port-port) {
+      font-size: 24px;
+    }
+    @include respond-from(xl-lg) {
+      font-size: 28px;
+    }
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    position: relative;
+    font-weight: 400;
+    color: var(--web-default);
+    cursor: default;
+    font-family: 'Quicksand', sans-serif;
+    @include respond-from(lg-md) {
+      padding-bottom: 0 !important;
+    }
+  }
+  li{
+    list-style: none;
+  }
+  img{
+    max-width: 100%;
+  }
